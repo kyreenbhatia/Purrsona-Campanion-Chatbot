@@ -1,0 +1,373 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Pastel Pink Theme */
+    --background: 340 30% 97%;
+    --foreground: 340 25% 20%;
+
+    --card: 340 35% 98%;
+    --card-foreground: 340 25% 20%;
+
+    --popover: 340 35% 98%;
+    --popover-foreground: 340 25% 20%;
+
+    --primary: 340 70% 75%;
+    --primary-foreground: 340 25% 15%;
+
+    --secondary: 280 50% 90%;
+    --secondary-foreground: 280 30% 25%;
+
+    --muted: 340 20% 92%;
+    --muted-foreground: 340 15% 45%;
+
+    --accent: 25 80% 85%;
+    --accent-foreground: 25 50% 25%;
+
+    --destructive: 0 70% 65%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 340 30% 88%;
+    --input: 340 30% 88%;
+    --ring: 340 70% 75%;
+
+    --radius: 1rem;
+
+    /* Custom Purrsona Colors */
+    --lavender: 270 60% 88%;
+    --mint: 160 45% 88%;
+    --peach: 25 85% 88%;
+    --cream: 40 50% 96%;
+    --soft-pink: 340 65% 85%;
+    --blush: 350 80% 90%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(340 70% 92%) 0%, hsl(280 50% 92%) 50%, hsl(340 65% 88%) 100%);
+    --gradient-bubble: linear-gradient(145deg, hsl(340 70% 96%) 0%, hsl(340 60% 92%) 100%);
+    --gradient-user-bubble: linear-gradient(145deg, hsl(340 70% 80%) 0%, hsl(340 65% 75%) 100%);
+    
+    /* Mood-based gradients */
+    --gradient-bubble-affection: linear-gradient(145deg, hsl(350 80% 94%) 0%, hsl(340 75% 90%) 100%);
+    --gradient-bubble-comfort: linear-gradient(145deg, hsl(210 60% 94%) 0%, hsl(220 55% 90%) 100%);
+    --gradient-bubble-happy: linear-gradient(145deg, hsl(50 75% 94%) 0%, hsl(340 70% 92%) 100%);
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(340 70% 75% / 0.25);
+    --shadow-bubble: 0 2px 12px -2px hsl(340 50% 70% / 0.2);
+    --shadow-glow: 0 0 30px hsl(340 70% 85% / 0.4);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 340 25% 8%;
+    --foreground: 340 20% 92%;
+
+    --card: 340 20% 12%;
+    --card-foreground: 340 20% 92%;
+
+    --popover: 340 20% 12%;
+    --popover-foreground: 340 20% 92%;
+
+    --primary: 340 65% 65%;
+    --primary-foreground: 340 25% 10%;
+
+    --secondary: 280 40% 25%;
+    --secondary-foreground: 280 30% 90%;
+
+    --muted: 340 15% 18%;
+    --muted-foreground: 340 15% 60%;
+
+    --accent: 25 60% 30%;
+    --accent-foreground: 25 50% 90%;
+
+    --destructive: 0 65% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 340 20% 20%;
+    --input: 340 20% 20%;
+    --ring: 340 65% 65%;
+
+    --lavender: 270 40% 30%;
+    --mint: 160 35% 25%;
+    --peach: 25 50% 30%;
+    --cream: 40 30% 15%;
+    --soft-pink: 340 50% 35%;
+    --blush: 350 60% 30%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(340 30% 15%) 0%, hsl(280 30% 15%) 50%, hsl(340 35% 18%) 100%);
+    --gradient-bubble: linear-gradient(145deg, hsl(340 30% 18%) 0%, hsl(340 25% 15%) 100%);
+    --gradient-user-bubble: linear-gradient(145deg, hsl(340 50% 40%) 0%, hsl(340 45% 35%) 100%);
+    
+    /* Dark mood-based gradients */
+    --gradient-bubble-affection: linear-gradient(145deg, hsl(350 40% 22%) 0%, hsl(340 35% 18%) 100%);
+    --gradient-bubble-comfort: linear-gradient(145deg, hsl(210 35% 20%) 0%, hsl(220 30% 16%) 100%);
+    --gradient-bubble-happy: linear-gradient(145deg, hsl(50 35% 20%) 0%, hsl(340 30% 18%) 100%);
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-nunito antialiased;
+  }
+}
+
+@layer utilities {
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-bubble {
+    background: var(--gradient-bubble);
+  }
+
+  .gradient-user-bubble {
+    background: var(--gradient-user-bubble);
+  }
+
+  .gradient-bubble-affection {
+    background: var(--gradient-bubble-affection);
+  }
+
+  .gradient-bubble-comfort {
+    background: var(--gradient-bubble-comfort);
+  }
+
+  .gradient-bubble-happy {
+    background: var(--gradient-bubble-happy);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-bubble {
+    box-shadow: var(--shadow-bubble);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.5);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.7);
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes pulse-soft {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes bounce-gentle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes typing-dot {
+  0%, 60%, 100% {
+    transform: translateY(0);
+    opacity: 0.4;
+  }
+  30% {
+    transform: translateY(-4px);
+    opacity: 1;
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 2s ease-in-out infinite;
+}
+
+.animate-bounce-gentle {
+  animation: bounce-gentle 1.5s ease-in-out infinite;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.4s ease-out forwards;
+}
+
+.typing-dot {
+  animation: typing-dot 1.4s ease-in-out infinite;
+}
+
+.typing-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* Emoji Popup Animations */
+@keyframes popup-gentle {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+@keyframes popup-slow {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) translateY(20px);
+  }
+  40% {
+    opacity: 1;
+    transform: scale(1.05) translateY(-5px);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes popup-quick {
+  0% {
+    opacity: 0;
+    transform: scale(0.2) rotate(-10deg);
+  }
+  40% {
+    opacity: 1;
+    transform: scale(1.2) rotate(5deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.animate-popup-gentle {
+  animation: popup-gentle 0.6s ease-out forwards;
+}
+
+.animate-popup-slow {
+  animation: popup-slow 1s ease-out forwards;
+}
+
+.animate-popup-quick {
+  animation: popup-quick 0.4s ease-out forwards;
+}
+
+/* Cat Ritual Animations */
+@keyframes stretch {
+  0%, 100% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scaleX(1.3);
+  }
+}
+
+@keyframes yawn {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+}
+
+@keyframes pet {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-5deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+}
+
+.animate-stretch {
+  animation: stretch 0.6s ease-in-out;
+}
+
+.animate-yawn {
+  animation: yawn 0.8s ease-in-out;
+}
+
+.animate-pet {
+  animation: pet 0.5s ease-in-out;
+}
