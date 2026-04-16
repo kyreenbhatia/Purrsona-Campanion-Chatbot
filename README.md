@@ -36,7 +36,7 @@ https://purrsona-cat-companion.vercel.app
 - **Tailwind CSS / CSS Modules**
 - Optional AI or logic-based backend integration
 
-*(Update this section if your stack differs.)*
+
 
 ---
 
