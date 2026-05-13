@@ -25,7 +25,7 @@ Optimized for desktop, tablet, and mobile devices.
 ## 🌐 Live Demo
 
 🔗 **Live App:**  
-https://purrsona-cat-companion.vercel.app
+https://purrsona-chat-pal.lovable.app
 
 ---
 
