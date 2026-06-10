@@ -1,4 +1,4 @@
-# 🐾 Purrsona Cat Companion
+# 🐾 Purrsona Cat Companion (Python CLI)
 
 **Purrsona Cat Companion** is a friendly, interactive web application designed for cat lovers. It acts as a virtual companion for your cat, blending playful interaction, personality-driven responses, and a delightful user experience.
 
